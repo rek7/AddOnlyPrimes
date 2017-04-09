@@ -17,13 +17,8 @@ int main(){
 
 	printf("2\n3\n");
 
-	loop:
+	while(1){
 		counter += 2;
-
-//		Uncomment to add a limit (default is 10,000,000)
-
-//		if(counter > 10000000)
-//			return 0;
 
 		if(counter < sqrt->counter){
 				current = root;
@@ -34,7 +29,7 @@ int main(){
 					if(current->counter > counter)
 						current = current->next;
 					else
-						goto loop;
+						break;
 				}
 
 			printf("%"PRIu64"\n", counter);
@@ -47,8 +42,6 @@ int main(){
 			sqrt = sqrt->next;
 			sqrt->counter = sqrt->prime * sqrt->prime;
 		}
-
-		goto loop;
-	
+	}
 	return 0;
 }
